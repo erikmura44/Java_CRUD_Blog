@@ -23,6 +23,13 @@
         </div>
         <p class="content" th:utext="${post.body}">Post content</p>
     </article>
+
+    <a th:href="@{/posts/edit/{id}/(id=${post.id})}">Edit Post</a>
+
+    <form method="post" th:action="@{/posts/delete/{id}/(id=${post.id})}">
+        <input type="submit" value="Delete Post" />
+    </form>
+
 </main>
 
 <footer th:replace="layout :: site-footer" />

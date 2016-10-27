@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Edit Post</title>
+</head>
+
+<body>
+
+<header th:replace="layout :: site-header" />
+
+<h1>Create a Post</h1>
+
+<form method="post" th:object="${editForm}">
+    <div><label for="title">Title:</label></div>
+    <input id="title" type="text" name="title" th:value="*{title}" th:placeholder="${post.title}"/>
+
+    <div><label for="body">Blog Content:</label></div>
+    <textarea id="body" type="text" name="body" th:value="*{body}" th:placeholder="${post.body}" />
+
+    <div>
+        <input type="submit" value="Edit Post"/>
+    </div>
+</form>
+
+<footer th:replace="layout :: site-footer" />
+
+</body>
+
+</html>
